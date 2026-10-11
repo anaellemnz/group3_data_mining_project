@@ -17,3 +17,12 @@ attributes_subset_for_model = [
 
 for att in attributes_subset_for_model:
     print(att)
+
+sub_df = df[attributes_subset_for_model]
+
+print("subsetted attributes df columns (includes both models features): ", sub_df.columns)
+
+print("Missing values per column: ")
+print( sub_df.isna().sum() )
+
+sub_df.to_stata("data_column_subset.dta", write_index = False)
