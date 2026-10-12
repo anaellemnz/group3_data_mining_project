@@ -2,85 +2,84 @@
 
 ## 1. Research Question and Study Design
 
-### Research Question and Dataset Overview
+### 1.1 Research Question and Dataset Overview
 
-### Adult Study Population and Eligibility Criteria
+### 1.2 Adult Study Population and Eligibility Criteria
 
-### Baseline and Expanded Feature Sets
+### 1.3 Baseline and Expanded Feature Sets
 
-### Outcome Definition and Evaluation Criteria
+### 1.4 Outcome Definition and Evaluation Criteria
 
 ## 2. Data Preprocessing
 
-### Column Selection 
+### 2.1 Column Selection
 
-### Filtering for Adult Population
+### 2.2 Filtering for Adult Population
 
-### Inspection of Datatypes, Distributions, and Missing-Response Codes
+### 2.3 Inspection of Datatypes, Distributions, and Missing-Response Codes
 
-### Data Cleaning and Handling of Missing or Inapplicable Responses
+### 2.4 Data Cleaning and Handling of Missing or Inapplicable Responses
 
-### Construction of TOTEXP23_binary from Original TOTEXP23 Column
+### 2.5 Construction of TOTEXP23_binary from Original TOTEXP23 Column
 
-### Generate Stratified Training, Validation, and Test Partitioning Data Files 
-
+### 2.6 Generate Stratified Training, Validation, and Test Partitioning Data Files
 
 ## 3. Individual Model Training
 
-### Shared Observations for Baseline and Expanded Models
+### 3.1 Shared Observations for Baseline and Expanded Models
 
-### KNN: Baseline and Expanded Models
+### 3.2 KNN: Baseline and Expanded Models
 
-### Logistic Regression: Baseline and Expanded Models
+### 3.3 Logistic Regression: Baseline and Expanded Models
 
-### Decision Tree: Baseline and Expanded Models
+### 3.4 Decision Tree: Baseline and Expanded Models
 
-### Saving Model Pipelines and Predictions with Person IDs
+### 3.5 Saving Model Pipelines and Predictions with Person IDs
 
 ## 4. Majority-Vote Ensembles
 
-### Baseline Ensemble: Combining the Three Baseline Models
+### 4.1 Baseline Ensemble: Combining the Three Baseline Models
 
-### Expanded Ensemble: Combining the Three Expanded Models
+### 4.2 Expanded Ensemble: Combining the Three Expanded Models
 
-### Prediction Alignment by Person ID
+### 4.3 Prediction Alignment by Person ID
 
-### Comparison of Ensemble Validation Performance
+### 4.4 Comparison of Ensemble Validation Performance
 
-### Finalization of Hyperparameters and Voting Rules
+### 4.5 Finalization of Hyperparameters and Voting Rules
 
 ## 5. Final Test Evaluation
 
-### Final Model Refitting and Test Predictions
+### 5.1 Final Model Refitting and Test Predictions
 
-### Classification Metrics and Majority-Class Reference
+### 5.2 Classification Metrics and Majority-Class Reference
 
-### Baseline, Expanded, and Ensemble Performance Comparisons
+### 5.3 Baseline, Expanded, and Ensemble Performance Comparisons
 
-### Uncertainty and Error Analysis
+### 5.4 Uncertainty and Error Analysis
 
 ## 6. Interpretation and Limitations
 
-### Do Physical Activity and Smoking Improve Classification?
+### 6.1 Do Physical Activity and Smoking Improve Classification?
 
-### Interpretation of Model Results
+### 6.2 Interpretation of Model Results
 
-### Predictive Findings Versus Causal Claims
+### 6.3 Predictive Findings Versus Causal Claims
 
 ## 7. Final Report
 
-### Introduction and Research Question
+### 7.1 Introduction and Research Question
 
-### Dataset and Study Population
+### 7.2 Dataset and Study Population
 
-### Baseline and Expanded Modeling Methods
+### 7.3 Baseline and Expanded Modeling Methods
 
-### Ensemble Construction
+### 7.4 Ensemble Construction
 
-### Results, Tables, and Figures
+### 7.5 Results, Tables, and Figures
 
-### Discussion and Limitations
+### 7.6 Discussion and Limitations
 
-### Conclusion
+### 7.7 Conclusion
 
-### References
+### 7.8 References
