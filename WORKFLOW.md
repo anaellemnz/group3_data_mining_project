@@ -4,87 +4,121 @@
 
 ### Research Question
 
-### Target Population and Eligibility Criteria
+### MEPS HC-251 Dataset Overview
 
-### Predictor Variables and Outcome Definition
+### Adult Study Population and Eligibility Criteria
 
-### Evaluation Metrics
+### Baseline Features: Age, Sex, and Insurance Coverage
+
+### Expanded Features: Baseline Plus Physical Activity and Smoking
+
+### Decision on Including Poverty Category in Both Feature Sets
+
+### Definition of High Healthcare Expenditure
+
+### Evaluation Metrics and Comparison Criteria
 
 ## 2. Data Preprocessing
 
-### Column Selection
+### Column Selection and Preservation of Person IDs
 
-### Data Exploration and Missing-Value Inspection
+### Inspection of Datatypes, Distributions, and Missing-Response Codes
 
-### Data Cleaning and Row Exclusion
+### Adult Population Filtering
 
-### Binary Target Construction
+### Data Cleaning and Handling of Missing or Inapplicable Responses
 
-### Stratified Training, Validation, and Test Partitioning
+### Documentation of Excluded Observations
 
-### Saving and Sharing the Prepared Datasets
+### Construction of TOTEXP23_binary Using the Adult Sample
+
+### Removal of Original Expenditure from Modeling Data
+
+### Shared Stratified Training, Validation, and Test Partitioning
+
+### Saving and Sharing the Splits as Stata Files
 
 ## 3. Individual Model Training
 
-### Shared Modeling Rules and Feature Definitions
+### Shared Observations for Baseline and Expanded Models
 
-### Model-Specific Preprocessing
+### Categorical Encoding, Scaling, and Imputation
 
-### K-Nearest Neighbors
+### KNN: Baseline and Expanded Models
 
-### Logistic Regression
+### Logistic Regression: Baseline and Expanded Models
 
-### Decision Tree
+### Decision Tree: Baseline and Expanded Models
 
 ### Hyperparameter Tuning Using Training and Validation Data
 
-### Comparison of Validation Results
+### Comparison of Validation Performance
 
-### Saving Trained Models and Predictions
+### Saving Model Pipelines and Predictions with Person IDs
 
-## 4. Majority-Vote Ensemble
+## 4. Majority-Vote Ensembles
 
-### Combining Predictions from the Three Models
+### Baseline Ensemble: Combining the Three Baseline Models
 
-### Aligning Predictions by Observation ID
+### Expanded Ensemble: Combining the Three Expanded Models
 
-### Ensemble Validation
+### Prediction Alignment by Person ID
 
-### Finalizing Models and Voting Rules
+### Comparison of Ensemble Validation Performance
 
-## 5. Final Evaluation
+### Finalization of Hyperparameters and Voting Rules
+
+## 5. Final Test Evaluation
 
 ### Final Refitting on Training and Validation Data
 
-### Evaluation on the Untouched Test Set
+### Evaluation on the Shared Untouched Test Set
 
-### Confusion Matrices and Classification Metrics
+### Majority-Class Reference Classifier
 
-### Comparison of Individual Models and the Ensemble
+### Confusion Matrices, Precision, Recall, and F1 Scores
 
-### Comparison Against a Majority-Class Baseline
+### Accuracy and Balanced Accuracy
+
+### Baseline Versus Expanded Comparison Within Each Algorithm
+
+### Baseline Versus Expanded Ensemble Comparison
+
+### Ensemble Versus Individual Model Comparison
+
+### Uncertainty in Performance Differences
 
 ### Error Analysis
 
 ## 6. Interpretation and Limitations
 
-### Findings Related to the Research Question
+### Do Physical Activity and Smoking Improve Classification?
+
+### Interpretation of Model Results
 
 ### Class Imbalance and Missing-Data Limitations
 
 ### Survey Weights and Population Generalizability
 
-### Predictive Associations Versus Causal Conclusions
+### Household Dependence Across Observations
+
+### Same-Year Associations Versus Future Prediction
+
+### Predictive Findings Versus Causal Claims
 
 ## 7. Final Report
 
 ### Introduction and Research Question
 
-### Dataset and Data Preparation
+### Dataset and Study Population
 
-### Modeling and Ensemble Methods
+### Data Preparation and Exclusions
 
-### Results and Visualizations
+### Baseline and Expanded Modeling Methods
+
+### Ensemble Construction
+
+### Results, Tables, and Figures
 
 ### Discussion and Limitations
 
@@ -92,12 +126,16 @@
 
 ### References
 
-## 8. Reproducibility and Project Completion
-
-### Dependencies and Random Seeds
-
-### Instructions for Running the Project
+## 8. Reproducibility and Team Coordination
 
 ### Team Responsibilities
 
-### Final Review of Code, Results, and Report
+### Script Execution Order
+
+### Dependencies and Random Seeds
+
+### Shared Data Versions and Model Artifacts
+
+### README and Instructions for Reproducing Results
+
+### Final Review of Code and Report
