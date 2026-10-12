@@ -13,26 +13,40 @@
 ## 2. Data Preprocessing
 
 ### 2.1 Column Selection
+Preserve person IDs; exclude IDs and survey weights from predictors.
 
 ### 2.2 Filtering for Adult Population
 
 ### 2.3 Inspection of Datatypes, Distributions, and Missing-Response Codes
 
 ### 2.4 Data Cleaning and Handling of Missing or Inapplicable Responses
+Keep the same eligible observations for baseline and expanded comparisons.
 
 ### 2.5 Construction of TOTEXP23_binary from Original TOTEXP23 Column
+Document the population used for the cutoff, treatment of ties, and whether the percentile is weighted.
 
 ### 2.6 Generate Stratified Training, Validation, and Test Partitioning Data Files
+Record the seed and split proportions; verify that sets do not overlap.
 
 ## 3. Individual Model Training
 
 ### 3.1 Shared Observations for Baseline and Expanded Models
 
 ### 3.2 KNN: Baseline and Expanded Models
+##### 3.2.1 Model-Specific Feature Preparation
+
+##### 3.2.2 Hyperparameter Tuning and Validation
 
 ### 3.3 Logistic Regression: Baseline and Expanded Models
 
+##### 3.3.1 Model-Specific Feature Preparation
+
+##### 3.3.2 Hyperparameter Tuning and Validation
+
 ### 3.4 Decision Tree: Baseline and Expanded Models
+##### 3.4.1 Model-Specific Feature Preparation
+
+##### 3.4.2 Hyperparameter Tuning and Validation
 
 ### 3.5 Saving Model Pipelines and Predictions with Person IDs
 
@@ -63,6 +77,7 @@
 ### 6.1 Do Physical Activity and Smoking Improve Classification?
 
 ### 6.2 Interpretation of Model Results
+Discuss missing-data exclusions and limitations of population claims without survey weighting.
 
 ### 6.3 Predictive Findings Versus Causal Claims
 
