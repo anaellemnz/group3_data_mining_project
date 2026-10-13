@@ -1,3 +1,6 @@
+from pathlib import Path
+import os
+
 attributes_subset_for_models = [
     "DUPERSID",
     "TOTEXP23",
@@ -9,9 +12,6 @@ attributes_subset_for_models = [
     "POVCAT23",
     "PERWT23F",
 ]
-
-from pathlib import Path
-import os
 
 PROJECT_ROOT = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
