@@ -13,6 +13,20 @@ attributes_subset_for_models = [
     "PERWT23F",
 ]
 
+ROW_ID = "DUPERSID"
+
+FEATURES = [
+    "PHYEXE53",
+    "OFTSMK53",
+    "AGE23X",
+    "SEX",
+    "INSCOV23",
+    "POVCAT23",
+    "PERWT23F",
+]
+
+TARGET = "TOTEXP23"
+
 PROJECT_ROOT = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
 )
