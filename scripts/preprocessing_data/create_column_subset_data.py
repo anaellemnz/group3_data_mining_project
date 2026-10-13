@@ -10,6 +10,11 @@ print('\nRaw data absolute path:\n', RAW_DATA)
 df = pd.read_stata(RAW_DATA, convert_categoricals=False)
 
 sub_df = df[attributes_subset_for_models].copy()
+print("\nOriginal dataframe shape:", df.shape[0])
+
+print("\nFiltered dataframe (AGE23X >= 18):")
+sub_df = sub_df.loc[sub_df["AGE23X"] >= 18].copy()
+print(sub_df.shape[0], "observations remaining after filtering.")
 
 print("\nExpected list of chosen attributes:")
 for att in attributes_subset_for_models:
