@@ -1,14 +1,23 @@
-from pathlib import Path
+
+import os
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-SEED = 42
-TARGET = "target"  
+from src.config import (
+    CLEANED_DATA_FILE,
+    ROW_ID,
+    SEED,
+    SPLITS_DIR,
+    TARGET,
+    TEST_FILE,
+    TRAIN_FILE,
+    VALIDATION_FILE,
+)
 
-df = pd.read_stata("data_column_subset.dta", convert_categoricals=False)
+df = pd.read_stata(CLEANED_DATA_FILE, convert_categoricals=False)
+print(f"Cleaned rows: {len(df)}")
 
-# Keep an existing unique identifier if available.
-df.insert(0, "row_id", range(len(df)))
 
 train, remaining = train_test_split(
     df,
@@ -17,6 +26,7 @@ train, remaining = train_test_split(
     random_state=SEED,
 )
 
+
 validation, test = train_test_split(
     remaining,
     test_size=0.50,
@@ -24,19 +34,22 @@ validation, test = train_test_split(
     random_state=SEED,
 )
 
-output = Path("data/splits")
-output.mkdir(parents=True, exist_ok=True)
 
-for name, split in [
-    ("train", train),
-    ("validation", validation),
-    ("test", test),
+train_ids, val_ids, test_ids = set(train[ROW_ID]), set(validation[ROW_ID]), set(test[ROW_ID])
+assert not (train_ids & val_ids), "train and validation overlap"
+assert not (train_ids & test_ids), "train and test overlap"
+assert not (val_ids & test_ids), "validation and test overlap"
+assert len(train_ids | val_ids | test_ids) == len(df), "rows lost during splitting"
+print("Checked: no overlap between splits, all rows assigned.")
+
+os.makedirs(SPLITS_DIR, exist_ok=True)
+
+for name, split, path in [
+    ("train", train, TRAIN_FILE),
+    ("validation", validation, VALIDATION_FILE),
+    ("test", test, TEST_FILE),
 ]:
-    split.to_stata(
-        output / f"{name}.dta",
-        write_index=False,
-        version=118,
-    )
-
-    print(f"{name}: {len(split)} rows")
-    print(split[TARGET].value_counts(normalize=True).sort_index())
+    split.to_stata(path, write_index=False, version=118)
+    share = split[TARGET].mean()
+    print(f"{name:10s} {len(split):5d} rows  ({len(split) / len(df):.0%})  "
+          f"positive class: {share:.2%}  -> {path}")
