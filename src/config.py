@@ -67,3 +67,5 @@ PREDICTIONS_DIR = os.path.join(PROJECT_ROOT, "results", "predictions")
 TABLES_DIR = os.path.join(PROJECT_ROOT, "results", "tables")
 FIGURES_DIR = os.path.join(PROJECT_ROOT, "results", "figures")
 
+################################ Also need the prediction column name for the test set predictions
+PREDICTION_COLUMN = "y_pred"
