@@ -41,6 +41,8 @@ PROJECT_ROOT = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
 )
 
+
+############################################# Data file paths
 RAW_DATA = os.path.join(PROJECT_ROOT, "data", "raw", "h251.dta")
 
 PREPARED_DATA_DIR = os.path.join(PROJECT_ROOT, "data", "prepared")
@@ -52,8 +54,16 @@ CLEANED_DATA_FILE = os.path.join(PREPARED_DATA_DIR, "data_cleaned.dta")
 
 SPLITS_DIR = os.path.join(PROJECT_ROOT, "data", "splits")
 
+############################################# filepaths for train, validation, and test splits
 TRAIN_FILE = os.path.join(SPLITS_DIR, "train.dta")
 
 VALIDATION_FILE = os.path.join(SPLITS_DIR, "validation.dta")
 
 TEST_FILE = os.path.join(SPLITS_DIR, "test.dta")
+
+############################### filepaths for results: models, predictions, tables and figures
+MODELS_DIR = os.path.join(PROJECT_ROOT, "results", "models")
+PREDICTIONS_DIR = os.path.join(PROJECT_ROOT, "results", "predictions")
+TABLES_DIR = os.path.join(PROJECT_ROOT, "results", "tables")
+FIGURES_DIR = os.path.join(PROJECT_ROOT, "results", "figures")
+
